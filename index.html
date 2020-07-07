@@ -7,12 +7,13 @@
 <body >
     <h2>Control Panel</h2>
     <div class ="btn">
-        
-        <button  style="margin-bottom:1% ;"> Top</button><br>
-        <button style="margin-left:33.7% ;" >Left</button>
-        <button style="margin-left:1% ; background-color: red;" ><b>Stop</b></button>
-        <button style="margin-left:1% ;" >Right</button> <br>
-        <button  style="margin-top:1% ;">Back</button>
+        <form action= "data.php" method="POST">
+            <button type="submit" style="margin-bottom:1% ;" value="f" name="forward"> Forward</button><br>
+            <button type="submit" style="margin-left:33.7% ;" value="l" name="lift">Left</button>
+            <button type="submit" style="margin-left:1% ; background-color: red;" value="s" name="stop"><b>Stop</b></button>
+            <button type="submit" style="margin-left:1% ;" value="r" name="right" >Right</button> <br>
+            <button type="submit" style="margin-top:1% ;" value="b" name="back">Back</button>
+        </form>
     </div>
 
     
