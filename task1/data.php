@@ -8,7 +8,7 @@
 
 
 <?php
-
+include "index.html";
 //connect database
 $conn = mysqli_connect('localhost','nouf','Zaidsaad123','robot');
 
@@ -59,23 +59,23 @@ $dir = mysqli_fetch_all($result, MYSQLI_ASSOC);
 foreach ($dir as $dirc){
     if ($dirc['stop'] == 's'  )
         {
-         echo "S";
+         echo "<h1  > S</h1>";
         }
     elseif ($dirc['lift1'] == 'l')
         {
-         echo "L";
+         echo "<h1  >L</h1>";
         }
     elseif ($dirc['right1'] == 'r')
         {
-         echo "R";
+         echo "<h1>R</h1>";
         }
     elseif ($dirc['forward'] == 'f')
         {
-         echo "F";
+         echo "<h1>F</h1>";
         }
     elseif ($dirc['back'] == 'b')
         {
-         echo "B";
+         echo "<h1>B</h1>";
         }
 
 }

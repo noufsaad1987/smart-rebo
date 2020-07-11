@@ -24,4 +24,27 @@ h2{
     margin-left: 45%;
   }
 
+  .btn2  {
+    position: relative;
+  }
+.btt button {
+    background-color:whitesmoke; 
+    border: 1px solid grey; /*  border */
+    color: black; /*  text */
+    padding: 8px 10px; /* Some padding */ 
+    cursor: pointer; /* Pointer/hand icon */
+    width: 15%;
+    margin-left: 45%;
 
+}
+
+.btt2 button {
+  background-color:whitesmoke; 
+  border: 1px solid grey; /*  border */
+  color: black; /*  text */
+  padding: 8px 10px; /* Some padding */ 
+  cursor: pointer; /* Pointer/hand icon */
+  width: 15%;
+  margin-left: 45%;
+
+}
