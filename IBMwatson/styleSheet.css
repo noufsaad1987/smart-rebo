@@ -1,0 +1,54 @@
+
+
+body{
+  background-color: paleturquoise;
+  
+   }
+h2{
+  text-align: center;
+  margin-top: 100px;
+}
+h1{
+  text-align: left;
+  margin-top: 100px;
+}
+
+
+.btn  {
+  position: relative;
+}
+
+.btn button {
+  background-color:whitesmoke; 
+  border: 1px solid grey; /*  border */
+  color: black; /*  text */
+  padding: 15px 40px; /* Some padding */ 
+  cursor: pointer; /* Pointer/hand icon */
+  width: 10%;
+  margin-left: 45%;
+}
+
+.btn2  {
+  position: relative;
+}
+.btt button {
+  background-color:whitesmoke; 
+  border: 1px solid grey; /*  border */
+  color: black; /*  text */
+  padding: 8px 10px; /* Some padding */ 
+  cursor: pointer; /* Pointer/hand icon */
+  width: 15%;
+  margin-left: 45%;
+
+}
+
+.btt2 button {
+background-color:whitesmoke; 
+border: 1px solid grey; /*  border */
+color: black; /*  text */
+padding: 8px 10px; /* Some padding */ 
+cursor: pointer; /* Pointer/hand icon */
+width: 15%;
+margin-left: 45%;
+
+}

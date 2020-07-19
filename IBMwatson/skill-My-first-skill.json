@@ -1,0 +1,402 @@
+{
+  "intents": [
+    {
+      "intent": "Greeting",
+      "examples": [
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hi"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Thanks",
+      "examples": [
+        {
+          "text": "thanks"
+        },
+        {
+          "text": "thank you"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "not-work",
+      "examples": [
+        {
+          "text": "not work"
+        },
+        {
+          "text": "button"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "direction",
+      "examples": [
+        {
+          "text": "left"
+        },
+        {
+          "text": "if used right"
+        },
+        {
+          "text": "right"
+        },
+        {
+          "text": "back"
+        },
+        {
+          "text": "forward"
+        },
+        {
+          "text": "stop"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "stop",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "stop",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "forward",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "forward",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Right",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "right",
+          "synonyms": [
+            "go right"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "back",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "back",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "left",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "left",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "forward",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The robot will go forward"
+              },
+              {
+                "text": "The robot moves forward"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1595139195214",
+      "conditions": "@forward",
+      "dialog_node": "node_3_1595142844705",
+      "previous_sibling": "node_8_1595142765842"
+    },
+    {
+      "type": "standard",
+      "title": "left",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The robot will go left"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1595139195214",
+      "conditions": "@left",
+      "dialog_node": "node_7_1595142711436",
+      "previous_sibling": "node_6_1595142033099"
+    },
+    {
+      "type": "standard",
+      "title": "sto",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The robot will stop "
+              },
+              {
+                "text": "The robot will not moved"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1595139195214",
+      "conditions": "@stop",
+      "dialog_node": "node_6_1595142033099",
+      "previous_sibling": "node_4_1595141862125"
+    },
+    {
+      "type": "standard",
+      "title": "back",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The robot will go back"
+              },
+              {
+                "text": "The robot moves to back"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1595139195214",
+      "conditions": "@back",
+      "dialog_node": "node_8_1595142765842",
+      "previous_sibling": "node_7_1595142711436"
+    },
+    {
+      "type": "standard",
+      "title": "Right",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The robot will go to right"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1595139195214",
+      "conditions": "@Right",
+      "dialog_node": "node_4_1595141862125"
+    },
+    {
+      "type": "standard",
+      "title": "Greeting",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello, how can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Greeting",
+      "dialog_node": "node_1_1595138500740",
+      "previous_sibling": "node_1_1595139659967"
+    },
+    {
+      "type": "standard",
+      "title": "direction",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_4_1595141862125"
+      },
+      "conditions": "#direction",
+      "dialog_node": "node_3_1595139195214",
+      "previous_sibling": "node_1_1595138500740"
+    },
+    {
+      "type": "standard",
+      "title": "Not work",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Try to update your page or website"
+              },
+              {
+                "text": "Try to ask the developer of web site"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#not-work",
+      "dialog_node": "node_1_1595139659967",
+      "previous_sibling": "node_2_1595143028195"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_3_1595139195214",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "thank",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Welcome!"
+              },
+              {
+                "text": "You are welcome."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Thanks",
+      "dialog_node": "node_2_1595143028195",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "My first skill",
+  "language": "en",
+  "description": ""
+}
