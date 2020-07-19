@@ -1,3 +1,34 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@noufsaad1987 
+noufsaad1987
+/
+smart-rebo
+1
+00
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+smart-rebo/task2/move.php /
+@noufsaad1987
+noufsaad1987 php code for path
+Latest commit 7cbbc22 8 days ago
+ History
+ 1 contributor
+131 lines (98 sloc)  3.63 KB
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,3 +160,15 @@ mysqli_close($conn);
 }
 
     ?>
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
